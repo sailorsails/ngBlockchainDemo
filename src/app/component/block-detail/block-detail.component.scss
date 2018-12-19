@@ -1,0 +1,25 @@
+.block-detail{
+    width: 50%;
+    background-color: #dedede;
+    border: solid 1px #cccccc;
+    padding: 7px;
+    overflow-wrap: break-word;
+    border-radius: 7px;
+    label{
+        padding-right: 20px;
+    }
+    .block{
+        padding: 7px;
+        background-color: blue;
+        color: white;
+        border-radius: 3px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        
+    }
+    .transaction{
+        padding: 7px;
+        background-color: orange;
+        border-bottom: solid 1px #ccc;
+    }
+}

@@ -1,0 +1,37 @@
+<div id='divTransactionDetail_page' class="transaction-detail">
+    <h2>Transaction Detail</h2>
+    <div id='divTransactionDetail' class="block" *ngIf='transactionDetail'>
+        <label>Hash</label>{{ transactionDetail.hash }} <br/>
+        <label>Version</label>{{ transactionDetail.ver }} <br/>
+        <label>Vin Size</label>{{ transactionDetail.vin_sz }} <br/>
+        <label>Vout Size</label>{{ transactionDetail.vout_sz }} <br/>
+        <label>Lock Time</label>{{ transactionDetail.lock_time }} <br/>
+        <label>Size</label>{{ transactionDetail.size }} <br/>
+        <label>Relayed By</label>{{ transactionDetail.relayed_by }} <br/>
+        <label>Block Height</label>{{ transactionDetail.block_height }} <br/>
+        <label>Transaction Index</label>{{ transactionDetail.tx_index }} <br/>
+
+        <div id='divTransactionDetail_inputs' class="transaction" *ngIf="transactionDetail.inputs">
+            <h4>Inputs</h4>
+            <ul>
+                <li *ngFor="let input of transactionDetail.inputs">
+                        <label>Hash:</label>{{input.prev_out.hash}}<br/>
+                        <label>Value:</label>{{input.prev_out.value}}<br/>
+                        <label>Tx Index:</label>{{input.prev_out.tx_index}}<br/>
+                        <label>n:</label>{{input.prev_out.n}}<br/>
+                    <label>Script</label>{{input.Script}}
+                </li>
+            </ul>
+        </div>
+        <div id='divTransactionDetail_outputs' class="transaction" *ngIf="transactionDetail.out">
+            <h4>Outputs</h4>
+            <ul>
+                <li *ngFor="let out of transactionDetail.out">
+                    <label>Value:</label>{{out.value}}<br/>
+                    <label>Hash:</label>{{out.hash}}<br/>
+                    <label>Script:</label>{{out.script}}
+                </li>
+            </ul>
+        </div>
+        
+    </div>

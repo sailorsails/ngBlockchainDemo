@@ -1,0 +1,36 @@
+<div class="block-detail">
+    <h2>Current Block Detail</h2>
+    <div class="block" *ngIf='blockDetail'>
+        <label>Hash</label>{{ blockDetail.hash }} <br/>
+        <label>Nonce</label>{{ blockDetail.nonce }} <br/>
+        <label>Size</label>{{ blockDetail.size }} <br/>
+        <label>Height</label>{{ blockDetail.height }} <br/>
+        <div class="transaction">
+            <h4>Transactions</h4>
+            <ul>
+                <li *ngFor="let transaction of blockDetail.tx">
+                    {{transaction.hash}}
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+
+    <div class="block" *ngIf="latestBlock">
+        <h2>Latest Block</h2>
+        <label>Hash</label>{{ latestBlock.hash }} <br/>
+        <label>Time</label>{{latestBlock.time}}<br/>
+        <label>Block Index</label>{{ latestBlock.block_index }} <br/>
+        <label>Height</label>{{ latestBlock.height }} <br/>
+        
+        <div class="transaction">
+            <h4>Transaction Indexes</h4>
+            <ul>
+                <li *ngFor="let transaction of latestBlock.txIndexes">
+                    <a routerLink="/trans-detail/{{transaction}}">{{transaction}}</a>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+</div>

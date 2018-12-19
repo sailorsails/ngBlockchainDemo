@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  serviceBaseUrl: 'https://blockchain.info',
+  serviceSocketUrl:'wss://ws.blockchain.info/inv',
+  enableRouterTracing: true
 };
 
 /*
